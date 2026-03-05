@@ -1,0 +1,16 @@
+{
+    "name": "Create3DParts",
+    "short_name": "Create3DParts",
+    "description": "Local 3D printing — quote within hours",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#0a0a0a",
+    "theme_color": "#f4621f",
+    "icons": [
+      {
+        "src": "/favicon.ico",
+        "sizes": "any",
+        "type": "image/x-icon"
+      }
+    ]
+  }

@@ -1,0 +1,8 @@
+# supabase/config.toml
+# Run `supabase link --project-ref YOUR_PROJECT_REF` to populate this file,
+# or replace the placeholder manually.
+
+project_id = "YOUR_PROJECT_REF"
+
+[functions.on-new-user]
+verify_jwt = false   # auth is handled by the WEBHOOK_SECRET header instead
