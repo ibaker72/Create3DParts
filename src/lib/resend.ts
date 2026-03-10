@@ -7,4 +7,4 @@ export function getResend() {
 }
 
 export const FROM_ADDRESS = process.env.RESEND_FROM ?? "onboarding@resend.dev";
-export const ADMIN_EMAIL  = process.env.ADMIN_EMAIL ?? "bakereyad7@gmail.com";
+export const ADMIN_EMAIL  = process.env.ADMIN_EMAIL ?? "hello@create3dparts.com";

@@ -10,7 +10,7 @@ const SUPABASE_URL            = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const RESEND_API_KEY          = Deno.env.get("RESEND_API_KEY")!;
 const FROM_ADDRESS            = Deno.env.get("RESEND_FROM") ?? "onboarding@resend.dev";
-const ADMIN_EMAIL             = Deno.env.get("ADMIN_EMAIL") ?? "bakereyad7@gmail.com";
+const ADMIN_EMAIL             = Deno.env.get("ADMIN_EMAIL") ?? "hello@create3dparts.com";
 // Set this secret in Supabase and mirror it in the Database Webhook header
 const WEBHOOK_SECRET          = Deno.env.get("WEBHOOK_SECRET") ?? "";
 
