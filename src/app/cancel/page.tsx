@@ -56,7 +56,7 @@ export default async function CancelPage({
           <p className="tag">// Checkout canceled</p>
           <h1>Payment not completed</h1>
           <p className="sub">
-            No worries — nothing has been charged. You can return to the site and try again whenever you're ready.
+            No worries — nothing has been charged. You can return to the site and try again whenever you&apos;re ready.
           </p>
 
           <div className="actions">

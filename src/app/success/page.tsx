@@ -62,16 +62,16 @@ export default async function SuccessPage({
           </div>
 
           <p className="tag">// Payment confirmed</p>
-          <h1>You're all set.</h1>
+          <h1>You&apos;re all set.</h1>
           <p className="sub">
-            Payment received. We'll review your file, prep the print, and reach out to coordinate pickup or confirm shipping.
+            Payment received. We&apos;ll review your file, prep the print, and reach out to coordinate pickup or confirm shipping.
           </p>
 
           <div className="steps">
             {[
-              { n: "01", title: "File review",         body: "We'll check your file and confirm it's print-ready. If anything needs adjustment we'll be in touch." },
-              { n: "02", title: "Printing",            body: "Once confirmed we start the print. You'll get a message when it's underway." },
-              { n: "03", title: "Pickup or shipping",  body: "We'll contact you to arrange local pickup in North NJ or confirm your shipping address." },
+              { n: "01", title: "File review",         body: "We\u2019ll check your file and confirm it\u2019s print-ready. If anything needs adjustment we\u2019ll be in touch." },
+              { n: "02", title: "Printing",            body: "Once confirmed we start the print. You\u2019ll get a message when it\u2019s underway." },
+              { n: "03", title: "Pickup or shipping",  body: "We\u2019ll contact you to arrange local pickup in North NJ or confirm your shipping address." },
             ].map((s) => (
               <div className="step" key={s.n}>
                 <div className="step-n">{s.n}</div>

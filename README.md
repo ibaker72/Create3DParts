@@ -1,4 +1,4 @@
-# Bambu Prints
+# Create3DParts
 
 Next.js app for managing 3D print quote requests, payments, and order tracking (Supabase + Stripe + Resend).
 
