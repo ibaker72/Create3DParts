@@ -119,7 +119,7 @@ export async function POST(req: Request) {
             .emails.send({
               from: FROM_ADDRESS,
               to: order.customer_email,
-              subject: "Your Bambu-prints order is confirmed ✅",
+              subject: "Your Create3DParts order is confirmed",
               html: `
                 <div style="font-family:sans-serif;max-width:520px;color:#111">
                   <h2 style="margin-bottom:4px">Order confirmed!</h2>

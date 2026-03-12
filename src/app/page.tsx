@@ -9,9 +9,6 @@ type FieldErrors = Partial<
   Record<"customerName" | "customerEmail" | "notes" | "file", string>
 >;
 
-type LoginClientProps = {
-  redirectTo: string;
-};
 
 /* ─────────────────────────────────────────
    CONSTANTS
@@ -200,7 +197,7 @@ const ACCEPTED_EXT = /\.(stl|step|obj|3mf)$/i;
    MAIN PAGE
 ───────────────────────────────────────── */
 
-export default function Home({ redirectTo }: LoginClientProps) {
+export default function Home() {
   // form state
   const [file, setFile] = useState<File | null>(null);
   const [customerName, setCustomerName] = useState("");
@@ -573,21 +570,16 @@ export default function Home({ redirectTo }: LoginClientProps) {
             <p className="eyebrow">// Recent Work</p>
             <h2 className="section-title">Prints from the last few weeks.</h2>
             <p className="section-sub">
-              A sample of parts we've made for local customers. Photos coming soon —
-              these are real orders.
+              A sample of real orders we've completed for local customers.
             </p>
           </div>
-          <div className="gallery-grid">
+          <div className="prints-list">
             {PRINTS.map((p) => (
-              <div className="gallery-card" key={p.label}>
-                <div className="gallery-placeholder" aria-label={`Photo of ${p.label}`}>
-                  <span className="gallery-placeholder-icon">◈</span>
-                  <span className="gallery-placeholder-text">Photo coming soon</span>
-                </div>
-                <div className="gallery-caption">
-                  <span className="gallery-label">{p.label}</span>
-                  <span className="gallery-mat">{p.material}</span>
-                </div>
+              <div className="print-row" key={p.label}>
+                <span className="print-icon" aria-hidden="true">◈</span>
+                <span className="print-label">{p.label}</span>
+                <span className="print-line" />
+                <span className="print-mat">{p.material}</span>
               </div>
             ))}
           </div>
@@ -642,6 +634,12 @@ export default function Home({ redirectTo }: LoginClientProps) {
                   price and turnaround time.
                 </p>
                 <p className="form-success-note">Nothing has been charged.</p>
+                <p className="form-success-contact">
+                  Need to follow up? Email{" "}
+                  <a href="mailto:projects@create3dparts.com" style={{ color: "#f4621f" }}>
+                    projects@create3dparts.com
+                  </a>
+                </p>
                 <div className="form-success-actions">
                   <button className="btn-ghost" onClick={resetForm}>
                     Submit another request
@@ -891,8 +889,8 @@ export default function Home({ redirectTo }: LoginClientProps) {
               <br />
               Fast turnaround. Firm quotes. Parts that fit.
             </p>
-            <a href="mailto:orders@create3dparts.com" className="footer-email">
-              orders@create3dparts.com
+            <a href="mailto:hello@create3dparts.com" className="footer-email">
+              hello@create3dparts.com
             </a>
           </div>
 
@@ -913,7 +911,13 @@ export default function Home({ redirectTo }: LoginClientProps) {
           </div>
 
           <div className="footer-col">
-            <div className="footer-col-title">Info</div>
+            <div className="footer-col-title">Contact</div>
+            <a href="mailto:hello@create3dparts.com" className="footer-link">
+              hello@create3dparts.com
+            </a>
+            <a href="mailto:projects@create3dparts.com" className="footer-link">
+              projects@create3dparts.com
+            </a>
             <a href="#faq" className="footer-link">
               FAQ
             </a>
@@ -1175,15 +1179,18 @@ const CSS = `
   .price-examples { font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.05em; color: var(--text-3); line-height: 1.8; margin-top: 0.7rem; border-top: 1px solid var(--border); padding-top: 0.6rem; }
   .pricing-footer { padding-top: 1rem; }
 
-  /* ── GALLERY ── */
-  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-  .gallery-card { background: var(--bg-card); overflow: hidden; }
-  .gallery-placeholder { aspect-ratio: 4/3; background: linear-gradient(135deg,#1a1a1a 0%,#222 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; border-bottom: 1px solid var(--border); }
-  .gallery-placeholder-icon { font-size: 1.5rem; color: var(--border2); }
-  .gallery-placeholder-text { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--text-3); text-transform: uppercase; }
-  .gallery-caption { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 1rem; }
-  .gallery-label { font-size: 0.85rem; font-weight: 500; color: var(--text); }
-  .gallery-mat { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--orange); text-transform: uppercase; }
+  /* ── PRINTS LIST ── */
+  .prints-list { border: 1px solid var(--border); background: var(--bg-card); }
+  .print-row { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  .print-row:last-child { border-bottom: none; }
+  .print-row:hover { background: #181818; }
+  .print-icon { color: var(--orange); font-size: 0.9rem; flex-shrink: 0; }
+  .print-label { font-size: 0.88rem; font-weight: 500; color: var(--text); white-space: nowrap; }
+  .print-line { flex: 1; height: 1px; background: var(--border); min-width: 20px; }
+  .print-mat { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; color: var(--orange); text-transform: uppercase; flex-shrink: 0; }
+
+  /* ── SUCCESS CONTACT ── */
+  .form-success-contact { font-family: var(--mono); font-size: 0.68rem; color: var(--text-3); letter-spacing: 0.04em; }
 
   /* ── TESTIMONIALS ── */
   .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
@@ -1262,6 +1269,5 @@ const CSS = `
     .items-grid { grid-template-columns: 1fr; }
     .steps-row { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
   }
 `;

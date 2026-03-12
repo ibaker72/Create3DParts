@@ -140,7 +140,7 @@ export async function POST(req: Request) {
       to:      ADMIN_EMAIL,
       subject: `🖨️ New order — ${body.customerName} / ${body.material} x${qty}`,
       html: `
-        <p><strong>New Bambu-prints order pending payment.</strong></p>
+        <p><strong>New Create3DParts order pending payment.</strong></p>
         <table cellpadding="6" style="border-collapse:collapse;font-family:monospace;font-size:13px">
           <tr><td><b>Name</b></td><td>${body.customerName}</td></tr>
           <tr><td><b>Email</b></td><td>${body.customerEmail}</td></tr>

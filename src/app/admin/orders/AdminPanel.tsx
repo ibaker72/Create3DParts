@@ -133,7 +133,7 @@ export default function AdminPanel({ orders, quotes }: { orders: Order[]; quotes
       `}</style>
 
       <nav className="nav">
-        <a href="/" className="nav-logo">BAMBU<span>-</span>PRINTS</a>
+        <a href="/" className="nav-logo">Create<span>3D</span>Parts</a>
         <div className="nav-right">
           <a href="/" className="nav-link">← Site</a>
           <LogoutBtn />
@@ -254,7 +254,7 @@ export default function AdminPanel({ orders, quotes }: { orders: Order[]; quotes
                       <td>
                         <a
                           className="reply-btn"
-                          href={`mailto:${q.customer_email}?subject=Re: Your Bambu-prints quote request&body=Hi ${q.customer_name},%0A%0AThanks for reaching out! Here's your quote:%0A%0A`}
+                          href={`mailto:${q.customer_email}?subject=Re: Your Create3DParts quote request&body=Hi ${q.customer_name},%0A%0AThanks for reaching out! Here's your quote:%0A%0A`}
                         >
                           Reply →
                         </a>
