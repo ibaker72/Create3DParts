@@ -18,12 +18,12 @@ export default function StatusBadge({ status }: { status: string }) {
   return (
     <span style={{
       fontFamily: "'Space Mono', monospace",
-      fontSize: "0.6rem",
+      fontSize: "0.55rem",
       letterSpacing: "0.1em",
       textTransform: "uppercase",
       color: b.color,
       background: b.bg,
-      padding: "0.25rem 0.6rem",
+      padding: "0.2rem 0.5rem",
       whiteSpace: "nowrap",
     }}>
       {b.label}

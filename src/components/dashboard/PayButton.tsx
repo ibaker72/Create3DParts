@@ -41,10 +41,10 @@ export default function PayButton({
           border: "none",
           fontFamily: "'Space Mono', monospace",
           fontWeight: 700,
-          fontSize: "0.75rem",
+          fontSize: "0.65rem",
           letterSpacing: "0.1em",
           textTransform: "uppercase",
-          padding: "0.75rem 1.5rem",
+          padding: "0.6rem 1.2rem",
           cursor: loading ? "not-allowed" : "pointer",
           transition: "opacity 0.15s",
         }}
@@ -52,7 +52,7 @@ export default function PayButton({
         {loading ? "Redirecting…" : `Pay $${(priceCents / 100).toFixed(2)} →`}
       </button>
       {error && (
-        <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: "#ff5555" }}>
+        <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.58rem", color: "#ff5555" }}>
           {error}
         </span>
       )}

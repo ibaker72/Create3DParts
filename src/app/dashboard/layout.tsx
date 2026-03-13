@@ -23,7 +23,7 @@ export default async function DashboardLayout({
       <Sidebar />
       <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
         <Topbar name={profile?.name ?? user.email ?? "Account"} />
-        <main style={{ flex: 1, padding: "2rem", maxWidth: 1100, width: "100%" }}>
+        <main style={{ flex: 1, padding: "1.5rem", maxWidth: 960, width: "100%" }}>
           {children}
         </main>
       </div>

@@ -14,10 +14,10 @@ export default function Sidebar() {
 
   return (
     <aside style={{
-      width: 220,
+      width: 190,
       background: "#0d0d0d",
       borderRight: "1px solid #1e1e1e",
-      padding: "1.5rem 0",
+      padding: "1.2rem 0",
       display: "flex",
       flexDirection: "column",
       position: "sticky",
@@ -28,12 +28,12 @@ export default function Sidebar() {
       <Link href="/" style={{
         fontFamily: "'Space Grotesk', sans-serif",
         fontWeight: 700,
-        fontSize: "0.95rem",
+        fontSize: "0.85rem",
         letterSpacing: "-0.02em",
         color: "#efefef",
         textDecoration: "none",
-        padding: "0 1.5rem",
-        marginBottom: "2rem",
+        padding: "0 1.2rem",
+        marginBottom: "1.5rem",
         display: "block",
       }}>
         Create<span style={{ color: "#f4621f" }}>3D</span>Parts
@@ -51,9 +51,9 @@ export default function Sidebar() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "0.7rem",
-                padding: "0.65rem 1.5rem",
-                fontSize: "0.85rem",
+                gap: "0.55rem",
+                padding: "0.5rem 1.2rem",
+                fontSize: "0.78rem",
                 fontWeight: active ? 600 : 400,
                 color: active ? "#f4621f" : "#a0a0a0",
                 textDecoration: "none",
@@ -62,17 +62,17 @@ export default function Sidebar() {
                 transition: "color 0.15s",
               }}
             >
-              <span style={{ fontSize: "0.9rem", opacity: 0.8 }}>{n.icon}</span>
+              <span style={{ fontSize: "0.8rem", opacity: 0.8 }}>{n.icon}</span>
               {n.label}
             </Link>
           );
         })}
       </nav>
 
-      <div style={{ marginTop: "auto", padding: "1.5rem", borderTop: "1px solid #1e1e1e" }}>
+      <div style={{ marginTop: "auto", padding: "1.2rem", borderTop: "1px solid #1e1e1e" }}>
         <Link href="/" style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: "0.62rem",
+          fontSize: "0.56rem",
           letterSpacing: "0.1em",
           color: "#5a5a5a",
           textDecoration: "none",

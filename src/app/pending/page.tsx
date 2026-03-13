@@ -9,32 +9,32 @@ export default function PendingPage() {
         alignItems: "center",
         justifyContent: "center",
         background: "#0d0d0d",
-        padding: "2rem",
+        padding: "1.5rem",
       }}
     >
       <div
         style={{
-          maxWidth: 480,
+          maxWidth: 420,
           width: "100%",
           background: "#111",
           border: "1px solid #1e1e1e",
-          padding: "3rem 2.5rem",
+          padding: "2rem 1.8rem",
           textAlign: "center",
         }}
       >
         {/* Icon */}
         <div
           style={{
-            width: 56,
-            height: 56,
+            width: 44,
+            height: 44,
             borderRadius: "50%",
             background: "#1a1400",
             border: "1px solid #3a2e00",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            margin: "0 auto 1.5rem",
-            fontSize: "1.5rem",
+            margin: "0 auto 1.2rem",
+            fontSize: "1.2rem",
           }}
         >
           ⏳
@@ -43,11 +43,11 @@ export default function PendingPage() {
         <p
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: "0.6rem",
+            fontSize: "0.55rem",
             letterSpacing: "0.2em",
             color: "#f4621f",
             textTransform: "uppercase",
-            marginBottom: "0.75rem",
+            marginBottom: "0.6rem",
           }}
         >
           // Pending Approval
@@ -57,10 +57,10 @@ export default function PendingPage() {
           style={{
             fontFamily: "'Space Grotesk', sans-serif",
             fontWeight: 700,
-            fontSize: "1.6rem",
+            fontSize: "1.3rem",
             letterSpacing: "-0.03em",
             color: "#efefef",
-            marginBottom: "1rem",
+            marginBottom: "0.8rem",
           }}
         >
           Account Under Review
@@ -68,10 +68,10 @@ export default function PendingPage() {
 
         <p
           style={{
-            fontSize: "0.9rem",
+            fontSize: "0.82rem",
             color: "#888",
-            lineHeight: 1.7,
-            marginBottom: "2rem",
+            lineHeight: 1.65,
+            marginBottom: "1.5rem",
           }}
         >
           Your account is currently under review. We will send you an email with
@@ -83,7 +83,7 @@ export default function PendingPage() {
           href="/"
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: "0.68rem",
+            fontSize: "0.62rem",
             letterSpacing: "0.1em",
             textTransform: "uppercase",
             color: "#5a5a5a",

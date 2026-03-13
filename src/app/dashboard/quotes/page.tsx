@@ -15,11 +15,11 @@ export default async function QuotesPage() {
     .order("created_at", { ascending: false });
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
       <div>
-        <p style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#f4621f", textTransform: "uppercase", marginBottom: "0.5rem" }}>// My Account</p>
-        <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1.8rem", letterSpacing: "-0.03em" }}>Quote Requests</h1>
-        <p style={{ fontSize: "0.85rem", color: "#5a5a5a", marginTop: "0.4rem" }}>
+        <p style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.58rem", letterSpacing: "0.2em", color: "#f4621f", textTransform: "uppercase", marginBottom: "0.4rem" }}>// My Account</p>
+        <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1.4rem", letterSpacing: "-0.03em" }}>Quote Requests</h1>
+        <p style={{ fontSize: "0.78rem", color: "#5a5a5a", marginTop: "0.35rem" }}>
           All requests submitted under <strong style={{ color: "#a0a0a0" }}>{user.email}</strong>
         </p>
       </div>
@@ -27,12 +27,12 @@ export default async function QuotesPage() {
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <Link href="/#quote" style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: "0.7rem",
+          fontSize: "0.62rem",
           letterSpacing: "0.08em",
           color: "#000",
           background: "#f4621f",
           textDecoration: "none",
-          padding: "0.55rem 1.2rem",
+          padding: "0.4rem 1rem",
           textTransform: "uppercase",
         }}>
           + New Request
@@ -40,16 +40,16 @@ export default async function QuotesPage() {
       </div>
 
       {!requests?.length ? (
-        <div style={{ background: "#0d0d0d", border: "1px solid #1e1e1e", padding: "3rem 2rem", textAlign: "center" }}>
-          <p style={{ fontSize: "0.88rem", color: "#5a5a5a", marginBottom: "1.5rem" }}>
+        <div style={{ background: "#0d0d0d", border: "1px solid #1e1e1e", padding: "2.2rem 1.5rem", textAlign: "center" }}>
+          <p style={{ fontSize: "0.8rem", color: "#5a5a5a", marginBottom: "1.2rem" }}>
             No quote requests yet.
           </p>
           <Link href="/#quote" style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: "0.7rem",
+            fontSize: "0.62rem",
             color: "#f4621f",
             border: "1px solid rgba(244,98,31,0.4)",
-            padding: "0.5rem 1.2rem",
+            padding: "0.4rem 1rem",
             textDecoration: "none",
           }}>
             Submit your first request →
@@ -61,7 +61,7 @@ export default async function QuotesPage() {
             <thead>
               <tr>
                 {["ID", "Date", "Material", "Qty", "Deadline", "Price", "Status", ""].map(h => (
-                  <th key={h} style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#5a5a5a", padding: "0.75rem 1rem", textAlign: "left", borderBottom: "1px solid #1e1e1e" }}>{h}</th>
+                  <th key={h} style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.55rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#5a5a5a", padding: "0.55rem 0.8rem", textAlign: "left", borderBottom: "1px solid #1e1e1e" }}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -71,34 +71,34 @@ export default async function QuotesPage() {
                 const canPay = r.status === "quoted" && r.price_cents && !isPaid;
                 return (
                   <tr key={r.id} style={{ borderBottom: "1px solid #131313" }}>
-                    <td style={{ padding: "0.8rem 1rem" }}>
-                      <Link href={`/dashboard/quotes/${r.id}`} style={{ color: "#f4621f", fontFamily: "'Space Mono', monospace", fontSize: "0.72rem", textDecoration: "none" }}>
+                    <td style={{ padding: "0.55rem 0.8rem" }}>
+                      <Link href={`/dashboard/quotes/${r.id}`} style={{ color: "#f4621f", fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", textDecoration: "none" }}>
                         {r.id.slice(0, 8).toUpperCase()}
                       </Link>
                     </td>
-                    <td style={{ padding: "0.8rem 1rem", fontSize: "0.82rem", color: "#5a5a5a" }}>
+                    <td style={{ padding: "0.55rem 0.8rem", fontSize: "0.75rem", color: "#5a5a5a" }}>
                       {new Date(r.created_at).toLocaleDateString()}
                     </td>
-                    <td style={{ padding: "0.8rem 1rem", fontSize: "0.85rem", color: "#efefef" }}>
+                    <td style={{ padding: "0.55rem 0.8rem", fontSize: "0.78rem", color: "#efefef" }}>
                       {r.material ?? "—"}
                     </td>
-                    <td style={{ padding: "0.8rem 1rem", fontSize: "0.85rem", color: "#efefef" }}>
+                    <td style={{ padding: "0.55rem 0.8rem", fontSize: "0.78rem", color: "#efefef" }}>
                       {r.quantity ?? "—"}
                     </td>
-                    <td style={{ padding: "0.8rem 1rem", fontSize: "0.82rem", color: "#5a5a5a" }}>
+                    <td style={{ padding: "0.55rem 0.8rem", fontSize: "0.75rem", color: "#5a5a5a" }}>
                       {r.deadline || "No rush"}
                     </td>
-                    <td style={{ padding: "0.8rem 1rem", fontSize: "0.85rem" }}>
+                    <td style={{ padding: "0.55rem 0.8rem", fontSize: "0.78rem" }}>
                       {r.price_cents
                         ? <span style={{ color: isPaid ? "#6abf69" : "#f4621f", fontWeight: 600 }}>
                             ${(r.price_cents / 100).toFixed(2)}
                           </span>
                         : <span style={{ color: "#5a5a5a" }}>TBD</span>}
                     </td>
-                    <td style={{ padding: "0.8rem 1rem" }}>
+                    <td style={{ padding: "0.55rem 0.8rem" }}>
                       <StatusBadge status={r.status ?? "pending"} />
                     </td>
-                    <td style={{ padding: "0.8rem 1rem" }}>
+                    <td style={{ padding: "0.55rem 0.8rem" }}>
                       {canPay ? (
                         <Link href={`/dashboard/quotes/${r.id}`} style={{
                           fontFamily: "'Space Mono', monospace",

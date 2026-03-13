@@ -59,9 +59,9 @@ export default async function AccountPage() {
   }
 
   return (
-    <main style={{ padding: "96px 24px", maxWidth: 980, margin: "0 auto" }}>
-      <h1 style={{ fontSize: 28, marginBottom: 8 }}>My Account</h1>
-      <p style={{ opacity: 0.85, marginBottom: 18 }}>
+    <main style={{ padding: "72px 20px", maxWidth: 840, margin: "0 auto" }}>
+      <h1 style={{ fontSize: 22, marginBottom: 6 }}>My Account</h1>
+      <p style={{ opacity: 0.85, marginBottom: 14, fontSize: 14 }}>
         Signed in as <b>{user.email}</b>
       </p>
 

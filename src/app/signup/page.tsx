@@ -63,9 +63,9 @@ export default function SignupPage() {
     <div style={pageStyle}>
       <div style={cardStyle}>
         <p style={tagStyle}>// Create Account</p>
-        <h1 style={{ ...headingStyle, marginBottom: "2rem" }}>Request Access</h1>
+        <h1 style={{ ...headingStyle, marginBottom: "1.5rem" }}>Request Access</h1>
 
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
           <Field label="Full Name">
             <input
               type="text"
@@ -98,7 +98,7 @@ export default function SignupPage() {
               autoComplete="new-password"
               style={inputStyle}
             />
-            <span style={{ fontSize: "0.7rem", color: "#5a5a5a", marginTop: "0.35rem", display: "block" }}>
+            <span style={{ fontSize: "0.62rem", color: "#5a5a5a", marginTop: "0.3rem", display: "block" }}>
               Minimum 8 characters
             </span>
           </Field>
@@ -115,11 +115,11 @@ export default function SignupPage() {
               color: "#000",
               fontFamily: "'Space Mono', monospace",
               fontWeight: 700,
-              fontSize: "0.72rem",
+              fontSize: "0.65rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               border: "none",
-              padding: "0.9rem 1.5rem",
+              padding: "0.7rem 1.2rem",
               cursor: status === "loading" ? "not-allowed" : "pointer",
               width: "100%",
               marginTop: "0.5rem",
@@ -129,7 +129,7 @@ export default function SignupPage() {
           </button>
         </form>
 
-        <p style={{ fontSize: "0.78rem", color: "#5a5a5a", marginTop: "1.5rem", textAlign: "center" }}>
+        <p style={{ fontSize: "0.7rem", color: "#5a5a5a", marginTop: "1.2rem", textAlign: "center" }}>
           Already have an account?{" "}
           <Link href="/login" style={{ color: "#f4621f", textDecoration: "none" }}>
             Sign in
@@ -142,11 +142,11 @@ export default function SignupPage() {
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
       <label
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: "0.6rem",
+          fontSize: "0.55rem",
           letterSpacing: "0.14em",
           textTransform: "uppercase",
           color: "#888",
@@ -166,39 +166,39 @@ const pageStyle: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
   background: "#0d0d0d",
-  padding: "2rem",
+  padding: "1.5rem",
 };
 
 const cardStyle: React.CSSProperties = {
-  maxWidth: 420,
+  maxWidth: 380,
   width: "100%",
   background: "#111",
   border: "1px solid #1e1e1e",
-  padding: "3rem 2.5rem",
+  padding: "2rem 1.8rem",
 };
 
 const tagStyle: React.CSSProperties = {
   fontFamily: "'Space Mono', monospace",
-  fontSize: "0.6rem",
+  fontSize: "0.55rem",
   letterSpacing: "0.2em",
   color: "#f4621f",
   textTransform: "uppercase",
-  marginBottom: "0.5rem",
+  marginBottom: "0.4rem",
 };
 
 const headingStyle: React.CSSProperties = {
   fontFamily: "'Space Grotesk', sans-serif",
   fontWeight: 700,
-  fontSize: "1.6rem",
+  fontSize: "1.3rem",
   letterSpacing: "-0.03em",
   color: "#efefef",
 };
 
 const bodyStyle: React.CSSProperties = {
-  fontSize: "0.88rem",
+  fontSize: "0.8rem",
   color: "#888",
-  lineHeight: 1.7,
-  marginBottom: "1.5rem",
+  lineHeight: 1.65,
+  marginBottom: "1.2rem",
 };
 
 const inputStyle: React.CSSProperties = {
@@ -206,8 +206,8 @@ const inputStyle: React.CSSProperties = {
   border: "1px solid #2a2a2a",
   color: "#efefef",
   fontFamily: "inherit",
-  fontSize: "0.88rem",
-  padding: "0.65rem 0.85rem",
+  fontSize: "0.8rem",
+  padding: "0.55rem 0.7rem",
   width: "100%",
   outline: "none",
   boxSizing: "border-box",
@@ -215,7 +215,7 @@ const inputStyle: React.CSSProperties = {
 
 const linkStyle: React.CSSProperties = {
   fontFamily: "'Space Mono', monospace",
-  fontSize: "0.68rem",
+  fontSize: "0.62rem",
   letterSpacing: "0.1em",
   textTransform: "uppercase",
   color: "#5a5a5a",

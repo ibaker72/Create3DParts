@@ -22,17 +22,17 @@ export default function SettingsForm({ profile, email }: { profile: any; email: 
 
   const inputStyle = {
     background: "#131313", border: "1px solid #282828", color: "#efefef",
-    padding: "0.72rem 0.9rem", fontFamily: "'DM Sans', sans-serif",
-    fontSize: "0.9rem", outline: "none", width: "100%",
+    padding: "0.58rem 0.75rem", fontFamily: "'DM Sans', sans-serif",
+    fontSize: "0.82rem", outline: "none", width: "100%",
   };
   const labelStyle = {
-    fontFamily: "'Space Mono', monospace", fontSize: "0.62rem",
+    fontFamily: "'Space Mono', monospace", fontSize: "0.56rem",
     letterSpacing: "0.14em", color: "#5a5a5a", textTransform: "uppercase" as const,
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
         <label style={labelStyle}>Email</label>
         <input style={{ ...inputStyle, opacity: 0.5 }} value={email} disabled />
       </div>
@@ -41,7 +41,7 @@ export default function SettingsForm({ profile, email }: { profile: any; email: 
         { label: "Company", val: company, set: setCompany },
         { label: "Phone", val: phone, set: setPhone },
       ].map(({ label, val, set }) => (
-        <div key={label} style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+        <div key={label} style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
           <label style={labelStyle}>{label}</label>
           <input style={inputStyle} value={val} onChange={(e) => set(e.target.value)} />
         </div>
@@ -49,11 +49,11 @@ export default function SettingsForm({ profile, email }: { profile: any; email: 
       <button
         disabled={saving}
         onClick={save}
-        style={{ background: "#f4621f", border: "none", color: "#000", fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.05em", textTransform: "uppercase", padding: "0.85rem 2rem", cursor: "pointer", opacity: saving ? 0.5 : 1, alignSelf: "flex-start" }}
+        style={{ background: "#f4621f", border: "none", color: "#000", fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.05em", textTransform: "uppercase", padding: "0.65rem 1.5rem", cursor: "pointer", opacity: saving ? 0.5 : 1, alignSelf: "flex-start" }}
       >
         {saving ? "Saving…" : "Save Changes"}
       </button>
-      {msg && <p style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.78rem", color: msg.startsWith("✓") ? "#6abf69" : "#ff5555" }}>{msg}</p>}
+      {msg && <p style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.68rem", color: msg.startsWith("✓") ? "#6abf69" : "#ff5555" }}>{msg}</p>}
     </div>
   );
 }

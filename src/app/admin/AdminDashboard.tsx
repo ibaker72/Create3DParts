@@ -64,12 +64,12 @@ function Badge({ status }: { status: string }) {
   return (
     <span style={{
       fontFamily: "var(--mono)",
-      fontSize: "0.58rem",
+      fontSize: "0.52rem",
       letterSpacing: "0.12em",
       textTransform: "uppercase",
       color: cfg.color,
       border: `1px solid ${cfg.color}50`,
-      padding: "0.2rem 0.55rem",
+      padding: "0.15rem 0.45rem",
       whiteSpace: "nowrap",
     }}>
       {cfg.label}
@@ -207,56 +207,56 @@ export default function AdminDashboard({
         body { background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
 
         /* nav */
-        .adm-nav { display:flex; align-items:center; justify-content:space-between; height:52px; padding:0 2rem; background:var(--bg2); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10; }
-        .adm-logo { font-family:var(--mono); font-size:0.78rem; letter-spacing:0.1em; color:var(--muted2); text-decoration:none; }
+        .adm-nav { display:flex; align-items:center; justify-content:space-between; height:42px; padding:0 1.5rem; background:var(--bg2); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10; }
+        .adm-logo { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.1em; color:var(--muted2); text-decoration:none; }
         .adm-logo span { color:var(--orange); }
-        .adm-nav-right { display:flex; align-items:center; gap:1.5rem; }
-        .adm-nav-link { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--muted); text-decoration:none; text-transform:uppercase; background:none; border:none; cursor:pointer; }
+        .adm-nav-right { display:flex; align-items:center; gap:1.2rem; }
+        .adm-nav-link { font-family:var(--mono); font-size:0.56rem; letter-spacing:0.1em; color:var(--muted); text-decoration:none; text-transform:uppercase; background:none; border:none; cursor:pointer; }
         .adm-nav-link:hover { color:var(--text); }
 
         /* page shell */
-        .adm-page { max-width:1320px; margin:0 auto; padding:2rem; }
-        .adm-page-tag { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; color:var(--orange); text-transform:uppercase; margin-bottom:0.5rem; }
-        .adm-page-title { font-family:var(--sans); font-weight:700; font-size:2rem; letter-spacing:-0.03em; line-height:1; }
+        .adm-page { max-width:1100px; margin:0 auto; padding:1.5rem; }
+        .adm-page-tag { font-family:var(--mono); font-size:0.56rem; letter-spacing:0.2em; color:var(--orange); text-transform:uppercase; margin-bottom:0.4rem; }
+        .adm-page-title { font-family:var(--sans); font-weight:700; font-size:1.5rem; letter-spacing:-0.03em; line-height:1; }
 
         /* tabs */
-        .adm-tabs { display:flex; gap:1px; background:var(--border); border:1px solid var(--border); width:fit-content; margin:2rem 0; }
-        .adm-tab { padding:0.65rem 1.5rem; font-family:var(--sans); font-size:0.82rem; font-weight:600; border:none; cursor:pointer; background:var(--bg3); color:var(--muted2); transition:all 0.15s; display:flex; align-items:center; gap:0.5rem; }
+        .adm-tabs { display:flex; gap:1px; background:var(--border); border:1px solid var(--border); width:fit-content; margin:1.5rem 0; }
+        .adm-tab { padding:0.5rem 1.2rem; font-family:var(--sans); font-size:0.75rem; font-weight:600; border:none; cursor:pointer; background:var(--bg3); color:var(--muted2); transition:all 0.15s; display:flex; align-items:center; gap:0.4rem; }
         .adm-tab.active { background:var(--orange); color:#000; }
-        .adm-tab-badge { font-family:var(--mono); font-size:0.58rem; padding:0.1rem 0.4rem; background:rgba(255,255,255,0.15); }
+        .adm-tab-badge { font-family:var(--mono); font-size:0.52rem; padding:0.08rem 0.35rem; background:rgba(255,255,255,0.15); }
         .adm-tab.active .adm-tab-badge { background:rgba(0,0,0,0.2); }
 
         /* section header */
-        .adm-section-hd { display:flex; align-items:center; gap:1rem; padding:0.75rem 0; margin-bottom:1px; }
-        .adm-section-label { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; }
-        .adm-section-count { font-family:var(--mono); font-size:0.6rem; color:var(--muted); background:var(--bg3); border:1px solid var(--border2); padding:0.15rem 0.5rem; }
+        .adm-section-hd { display:flex; align-items:center; gap:0.8rem; padding:0.6rem 0; margin-bottom:1px; }
+        .adm-section-label { font-family:var(--mono); font-size:0.55rem; letter-spacing:0.16em; text-transform:uppercase; }
+        .adm-section-count { font-family:var(--mono); font-size:0.55rem; color:var(--muted); background:var(--bg3); border:1px solid var(--border2); padding:0.12rem 0.4rem; }
         .adm-section-line { flex:1; height:1px; background:var(--border); }
 
         /* table */
-        .adm-table-wrap { overflow-x:auto; border:1px solid var(--border); margin-bottom:2.5rem; }
-        table { width:100%; border-collapse:collapse; font-size:0.83rem; }
+        .adm-table-wrap { overflow-x:auto; border:1px solid var(--border); margin-bottom:2rem; }
+        table { width:100%; border-collapse:collapse; font-size:0.76rem; }
         thead { background:var(--bg2); border-bottom:1px solid var(--border); }
-        th { text-align:left; padding:0.75rem 1rem; font-family:var(--mono); font-size:0.58rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; font-weight:400; white-space:nowrap; }
-        td { padding:0.9rem 1rem; border-bottom:1px solid var(--border); vertical-align:middle; }
+        th { text-align:left; padding:0.55rem 0.8rem; font-family:var(--mono); font-size:0.52rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; font-weight:400; white-space:nowrap; }
+        td { padding:0.65rem 0.8rem; border-bottom:1px solid var(--border); vertical-align:middle; }
         tr:last-child td { border-bottom:none; }
         tr:hover td { background:var(--bg2); }
 
         /* cell helpers */
-        .cell-name { font-weight:600; font-size:0.88rem; color:var(--text); }
-        .cell-sub { font-size:0.75rem; color:var(--muted2); margin-top:0.2rem; }
-        .cell-mono { font-family:var(--mono); font-size:0.7rem; color:var(--muted2); line-height:1.7; }
+        .cell-name { font-weight:600; font-size:0.8rem; color:var(--text); }
+        .cell-sub { font-size:0.68rem; color:var(--muted2); margin-top:0.15rem; }
+        .cell-mono { font-family:var(--mono); font-size:0.62rem; color:var(--muted2); line-height:1.65; }
         .cell-mono b { color:var(--text); }
-        .cell-price { font-family:var(--mono); font-weight:700; font-size:1rem; }
+        .cell-price { font-family:var(--mono); font-weight:700; font-size:0.88rem; }
 
         /* price input row */
-        .price-row { display:flex; gap:0.5rem; align-items:center; }
-        .price-input { background:#1a1a1a; border:1px solid var(--border2); color:var(--text); font-family:var(--mono); font-size:0.78rem; padding:0.45rem 0.65rem; width:96px; outline:none; }
+        .price-row { display:flex; gap:0.4rem; align-items:center; }
+        .price-input { background:#1a1a1a; border:1px solid var(--border2); color:var(--text); font-family:var(--mono); font-size:0.7rem; padding:0.38rem 0.55rem; width:84px; outline:none; }
         .price-input:focus { border-color:var(--orange); }
         .price-input::placeholder { color:var(--muted); }
-        .price-error { font-family:var(--mono); font-size:0.6rem; color:#ff5555; margin-top:0.3rem; }
+        .price-error { font-family:var(--mono); font-size:0.55rem; color:#ff5555; margin-top:0.25rem; }
 
         /* action buttons */
-        .btn { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; border:none; cursor:pointer; padding:0.45rem 0.9rem; transition:all 0.15s; white-space:nowrap; }
+        .btn { font-family:var(--mono); font-size:0.56rem; letter-spacing:0.08em; text-transform:uppercase; border:none; cursor:pointer; padding:0.38rem 0.75rem; transition:all 0.15s; white-space:nowrap; }
         .btn:disabled { opacity:0.4; cursor:not-allowed; }
         .btn-orange { background:var(--orange); color:#000; }
         .btn-orange:hover:not(:disabled) { background:#d9541a; }
@@ -270,7 +270,7 @@ export default function AdminDashboard({
         .btn-red:hover:not(:disabled) { background:#3a0e0e; }
 
         /* empty state */
-        .adm-empty { padding:2.5rem; text-align:center; font-family:var(--mono); font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; border:1px solid var(--border); margin-bottom:2.5rem; }
+        .adm-empty { padding:2rem; text-align:center; font-family:var(--mono); font-size:0.65rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; border:1px solid var(--border); margin-bottom:2rem; }
       `}</style>
 
       {/* ── Nav ── */}
@@ -279,7 +279,7 @@ export default function AdminDashboard({
           Create<span>3D</span>Parts <span style={{ opacity: 0.4, marginLeft: 8 }}>/ Admin</span>
         </a>
         <div className="adm-nav-right">
-          <span style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", color: "var(--muted)" }}>
+          <span style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", color: "var(--muted)" }}>
             {adminEmail}
           </span>
           <a href="/" className="adm-nav-link">← Site</a>
