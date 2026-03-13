@@ -51,12 +51,12 @@ function StatusBadge({ s }: { s: string }) {
   return (
     <span style={{
       fontFamily: "var(--mono)",
-      fontSize: "0.62rem",
+      fontSize: "0.55rem",
       letterSpacing: "0.1em",
       textTransform: "uppercase",
       color: STATUS_COLORS[s] ?? "#888",
       border: `1px solid ${STATUS_COLORS[s] ?? "#888"}40`,
-      padding: "0.2rem 0.5rem",
+      padding: "0.15rem 0.4rem",
       whiteSpace: "nowrap",
     }}>
       {s}
@@ -88,48 +88,48 @@ export default function AdminPanel({ orders, quotes }: { orders: Order[]; quotes
         }
         body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
 
-        .nav { display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:56px; background:var(--bg2); border-bottom:1px solid var(--border); }
-        .nav-logo { font-family:var(--mono); font-size:0.8rem; letter-spacing:0.12em; color:var(--muted2); text-decoration:none; }
+        .nav { display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; height:42px; background:var(--bg2); border-bottom:1px solid var(--border); }
+        .nav-logo { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; color:var(--muted2); text-decoration:none; }
         .nav-logo span { color:var(--orange); }
-        .nav-right { display:flex; align-items:center; gap:1.5rem; }
-        .nav-link { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.1em; color:var(--muted2); text-decoration:none; text-transform:uppercase; }
+        .nav-right { display:flex; align-items:center; gap:1.2rem; }
+        .nav-link { font-family:var(--mono); font-size:0.58rem; letter-spacing:0.1em; color:var(--muted2); text-decoration:none; text-transform:uppercase; }
         .nav-link:hover { color:var(--text); }
 
-        .page { max-width:1300px; margin:0 auto; padding:2rem; }
-        .page-header { margin-bottom:2rem; }
-        .page-tag { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.2em; color:var(--orange); text-transform:uppercase; margin-bottom:0.5rem; }
-        .page-title { font-family:var(--cond); font-weight:900; font-size:2.4rem; text-transform:uppercase; line-height:1; }
-        .page-sub { font-size:0.88rem; color:var(--muted2); margin-top:0.4rem; }
+        .page { max-width:1100px; margin:0 auto; padding:1.5rem; }
+        .page-header { margin-bottom:1.5rem; }
+        .page-tag { font-family:var(--mono); font-size:0.58rem; letter-spacing:0.2em; color:var(--orange); text-transform:uppercase; margin-bottom:0.4rem; }
+        .page-title { font-family:var(--cond); font-weight:900; font-size:1.8rem; text-transform:uppercase; line-height:1; }
+        .page-sub { font-size:0.8rem; color:var(--muted2); margin-top:0.35rem; }
 
         /* TABS */
-        .tabs { display:flex; gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:2rem; width:fit-content; }
-        .tab { padding:0.65rem 1.5rem; font-family:var(--sans); font-size:0.82rem; font-weight:600; letter-spacing:0.05em; border:none; cursor:pointer; background:var(--bg3); color:var(--muted2); transition:all 0.15s; display:flex; align-items:center; gap:0.5rem; }
+        .tabs { display:flex; gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:1.5rem; width:fit-content; }
+        .tab { padding:0.5rem 1.2rem; font-family:var(--sans); font-size:0.75rem; font-weight:600; letter-spacing:0.05em; border:none; cursor:pointer; background:var(--bg3); color:var(--muted2); transition:all 0.15s; display:flex; align-items:center; gap:0.4rem; }
         .tab.active { background:var(--orange); color:#000; }
-        .tab-badge { font-family:var(--mono); font-size:0.6rem; background:#000; color:var(--orange); padding:0.1rem 0.4rem; border-radius:2px; }
+        .tab-badge { font-family:var(--mono); font-size:0.52rem; background:#000; color:var(--orange); padding:0.08rem 0.35rem; border-radius:2px; }
         .tab.active .tab-badge { background:rgba(0,0,0,0.25); color:#000; }
 
         /* TABLE */
         .table-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:0; }
-        table { width:100%; border-collapse:collapse; font-size:0.83rem; }
+        table { width:100%; border-collapse:collapse; font-size:0.76rem; }
         thead { background:var(--bg2); border-bottom:1px solid var(--border); }
-        th { text-align:left; padding:0.8rem 1rem; font-family:var(--mono); font-size:0.6rem; letter-spacing:0.12em; color:var(--muted2); text-transform:uppercase; white-space:nowrap; font-weight:400; }
-        td { padding:0.9rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+        th { text-align:left; padding:0.55rem 0.8rem; font-family:var(--mono); font-size:0.52rem; letter-spacing:0.12em; color:var(--muted2); text-transform:uppercase; white-space:nowrap; font-weight:400; }
+        td { padding:0.65rem 0.8rem; border-bottom:1px solid var(--border); vertical-align:top; }
         tr:last-child td { border-bottom:none; }
         tr:hover td { background:var(--bg2); }
-        .name { font-weight:600; font-size:0.88rem; }
-        .email { font-size:0.78rem; color:var(--muted2); margin-top:0.15rem; }
-        .phone { font-size:0.75rem; color:var(--muted); margin-top:0.1rem; font-family:var(--mono); }
-        .spec { font-family:var(--mono); font-size:0.72rem; color:var(--muted2); line-height:1.7; }
+        .name { font-weight:600; font-size:0.8rem; }
+        .email { font-size:0.7rem; color:var(--muted2); margin-top:0.12rem; }
+        .phone { font-size:0.68rem; color:var(--muted); margin-top:0.08rem; font-family:var(--mono); }
+        .spec { font-family:var(--mono); font-size:0.65rem; color:var(--muted2); line-height:1.65; }
         .spec b { color:var(--text); }
-        .notes-cell { font-size:0.78rem; color:var(--muted2); max-width:260px; line-height:1.5; }
-        .file-link { font-family:var(--mono); font-size:0.65rem; color:var(--orange); text-decoration:none; display:block; margin-top:0.3rem; letter-spacing:0.05em; }
+        .notes-cell { font-size:0.7rem; color:var(--muted2); max-width:220px; line-height:1.45; }
+        .file-link { font-family:var(--mono); font-size:0.58rem; color:var(--orange); text-decoration:none; display:block; margin-top:0.25rem; letter-spacing:0.05em; }
         .file-link:hover { text-decoration:underline; }
-        .filename { font-family:var(--mono); font-size:0.7rem; color:var(--muted2); }
-        .price { font-family:var(--cond); font-weight:700; font-size:1.1rem; color:var(--text); }
-        .date { font-family:var(--mono); font-size:0.68rem; color:var(--muted2); white-space:nowrap; }
-        .reply-btn { display:inline-block; margin-top:0.4rem; font-family:var(--mono); font-size:0.62rem; letter-spacing:0.08em; color:var(--orange); border:1px solid var(--orange)30; padding:0.2rem 0.6rem; text-decoration:none; transition:all 0.15s; }
+        .filename { font-family:var(--mono); font-size:0.62rem; color:var(--muted2); }
+        .price { font-family:var(--cond); font-weight:700; font-size:0.95rem; color:var(--text); }
+        .date { font-family:var(--mono); font-size:0.6rem; color:var(--muted2); white-space:nowrap; }
+        .reply-btn { display:inline-block; margin-top:0.35rem; font-family:var(--mono); font-size:0.56rem; letter-spacing:0.08em; color:var(--orange); border:1px solid var(--orange)30; padding:0.15rem 0.5rem; text-decoration:none; transition:all 0.15s; }
         .reply-btn:hover { background:var(--orange); color:#000; }
-        .empty { padding:3rem 2rem; text-align:center; font-family:var(--mono); font-size:0.75rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+        .empty { padding:2.2rem 1.5rem; text-align:center; font-family:var(--mono); font-size:0.68rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
       `}</style>
 
       <nav className="nav">

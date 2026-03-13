@@ -22,38 +22,38 @@ export default async function DashboardPage() {
   const recent   = requests?.slice(0, 6) ?? [];
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
 
       {/* Header */}
       <div>
-        <p style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#f4621f", textTransform: "uppercase", marginBottom: "0.5rem" }}>// Overview</p>
-        <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1.8rem", letterSpacing: "-0.03em" }}>Dashboard</h1>
-        <p style={{ fontSize: "0.85rem", color: "#5a5a5a", marginTop: "0.4rem" }}>{email}</p>
+        <p style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.58rem", letterSpacing: "0.2em", color: "#f4621f", textTransform: "uppercase", marginBottom: "0.4rem" }}>// Overview</p>
+        <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1.4rem", letterSpacing: "-0.03em" }}>Dashboard</h1>
+        <p style={{ fontSize: "0.78rem", color: "#5a5a5a", marginTop: "0.35rem" }}>{email}</p>
       </div>
 
       {/* Action banner — quotes ready to pay */}
       {quoted.length > 0 && (
-        <div style={{ background: "rgba(244,98,31,0.07)", border: "1px solid rgba(244,98,31,0.25)", padding: "1rem 1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
-          <span style={{ fontSize: "0.88rem", color: "#f4621f" }}>
+        <div style={{ background: "rgba(244,98,31,0.07)", border: "1px solid rgba(244,98,31,0.25)", padding: "0.75rem 1.2rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.8rem" }}>
+          <span style={{ fontSize: "0.8rem", color: "#f4621f" }}>
             ⚡ {quoted.length} quote{quoted.length > 1 ? "s are" : " is"} ready — review and pay to start printing.
           </span>
-          <Link href="/dashboard/quotes" style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.72rem", color: "#f4621f", textDecoration: "none", border: "1px solid rgba(244,98,31,0.4)", padding: "0.35rem 0.8rem" }}>
+          <Link href="/dashboard/quotes" style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.62rem", color: "#f4621f", textDecoration: "none", border: "1px solid rgba(244,98,31,0.4)", padding: "0.28rem 0.65rem" }}>
             View Quotes →
           </Link>
         </div>
       )}
 
       {/* Stats row */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 1, background: "#1e1e1e", border: "1px solid #1e1e1e" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 1, background: "#1e1e1e", border: "1px solid #1e1e1e" }}>
         {[
           { label: "Total Requests", value: requests?.length ?? 0 },
           { label: "Pending Review", value: pending.length },
           { label: "Awaiting Payment", value: quoted.length },
           { label: "Completed", value: paid.length },
         ].map(s => (
-          <div key={s.label} style={{ background: "#0d0d0d", padding: "1.2rem 1.5rem" }}>
-            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.14em", color: "#5a5a5a", textTransform: "uppercase", marginBottom: "0.5rem" }}>{s.label}</div>
-            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1.6rem", color: "#efefef" }}>{s.value}</div>
+          <div key={s.label} style={{ background: "#0d0d0d", padding: "0.9rem 1.2rem" }}>
+            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.55rem", letterSpacing: "0.14em", color: "#5a5a5a", textTransform: "uppercase", marginBottom: "0.4rem" }}>{s.label}</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "#efefef" }}>{s.value}</div>
           </div>
         ))}
       </div>
@@ -70,7 +70,7 @@ export default async function DashboardPage() {
             {recent.map((r) => (
               <tr key={r.id}>
                 <Td>
-                  <Link href={`/dashboard/quotes/${r.id}`} style={{ color: "#f4621f", fontFamily: "'Space Mono', monospace", fontSize: "0.72rem" }}>
+                  <Link href={`/dashboard/quotes/${r.id}`} style={{ color: "#f4621f", fontFamily: "'Space Mono', monospace", fontSize: "0.65rem" }}>
                     {r.id.slice(0, 8)}…
                   </Link>
                 </Td>
@@ -83,7 +83,7 @@ export default async function DashboardPage() {
                     ? <span style={{ color: r.stripe_payment_status === "paid" ? "#6abf69" : "#f4621f" }}>
                         ${(r.price_cents / 100).toFixed(2)}
                         {r.stripe_payment_status !== "paid" && r.stripe_payment_link && (
-                          <a href={r.stripe_payment_link} target="_blank" rel="noreferrer" style={{ marginLeft: "0.5rem", fontSize: "0.65rem", color: "#f4621f", border: "1px solid rgba(244,98,31,0.4)", padding: "0.15rem 0.4rem", textDecoration: "none" }}>
+                          <a href={r.stripe_payment_link} target="_blank" rel="noreferrer" style={{ marginLeft: "0.4rem", fontSize: "0.58rem", color: "#f4621f", border: "1px solid rgba(244,98,31,0.4)", padding: "0.12rem 0.35rem", textDecoration: "none" }}>
                             Pay Now →
                           </a>
                         )}
@@ -103,9 +103,9 @@ export default async function DashboardPage() {
 function Section({ title, link, children }: { title: string; link: string; children: React.ReactNode }) {
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
-        <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "1rem" }}>{title}</h2>
-        <Link href={link} style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: "#5a5a5a", textDecoration: "none", letterSpacing: "0.08em" }}>View all →</Link>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.8rem" }}>
+        <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "0.9rem" }}>{title}</h2>
+        <Link href={link} style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.58rem", color: "#5a5a5a", textDecoration: "none", letterSpacing: "0.08em" }}>View all →</Link>
       </div>
       {children}
     </div>
@@ -119,7 +119,7 @@ function Table({ headers, children }: { headers: string[]; children: React.React
         <thead>
           <tr>
             {headers.map(h => (
-              <th key={h} style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#5a5a5a", padding: "0.75rem 1rem", textAlign: "left", borderBottom: "1px solid #1e1e1e" }}>{h}</th>
+              <th key={h} style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.55rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#5a5a5a", padding: "0.55rem 0.8rem", textAlign: "left", borderBottom: "1px solid #1e1e1e" }}>{h}</th>
             ))}
           </tr>
         </thead>
@@ -131,12 +131,12 @@ function Table({ headers, children }: { headers: string[]; children: React.React
 
 function Td({ children, muted }: { children: React.ReactNode; muted?: boolean }) {
   return (
-    <td style={{ padding: "0.8rem 1rem", fontSize: "0.85rem", color: muted ? "#5a5a5a" : "#efefef", borderBottom: "1px solid #131313" }}>
+    <td style={{ padding: "0.55rem 0.8rem", fontSize: "0.78rem", color: muted ? "#5a5a5a" : "#efefef", borderBottom: "1px solid #131313" }}>
       {children}
     </td>
   );
 }
 
 function Empty({ children }: { children: React.ReactNode }) {
-  return <p style={{ fontSize: "0.85rem", color: "#5a5a5a", padding: "1.5rem 0", fontStyle: "italic" }}>{children}</p>;
+  return <p style={{ fontSize: "0.78rem", color: "#5a5a5a", padding: "1.2rem 0", fontStyle: "italic" }}>{children}</p>;
 }

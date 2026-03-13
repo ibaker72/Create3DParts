@@ -13,35 +13,35 @@ const STYLES = `
     --mono:’Space Mono’,monospace; --sans:’DM Sans’,sans-serif; --display:’Space Grotesk’,sans-serif;
   }
   body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
-  .wrap { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:2rem; flex-direction:column; gap:1rem; }
-  .card { width:100%; max-width:420px; background:var(--bg2); border:1px solid var(--border); border-top:3px solid var(--orange); padding:2.5rem; }
-  .logo { font-family:var(--display); font-size:1rem; font-weight:700; letter-spacing:-0.02em; color:var(--text); margin-bottom:0.5rem; display:block; text-decoration:none; }
+  .wrap { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:1.5rem; flex-direction:column; gap:0.8rem; }
+  .card { width:100%; max-width:380px; background:var(--bg2); border:1px solid var(--border); border-top:3px solid var(--orange); padding:2rem; }
+  .logo { font-family:var(--display); font-size:0.88rem; font-weight:700; letter-spacing:-0.02em; color:var(--text); margin-bottom:0.4rem; display:block; text-decoration:none; }
   .logo span { color:var(--orange); }
   .backlink {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.35rem;
     font-family: var(--mono);
-    font-size: 0.62rem;
+    font-size: 0.56rem;
     letter-spacing: 0.1em;
     color: var(--muted);
     text-decoration: none;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
   }
   .backlink:hover { color: var(--muted2); }
-  h1 { font-family:var(--display); font-weight:700; font-size:1.6rem; letter-spacing:-0.03em; margin-bottom:0.4rem; }
-  .subtitle { font-size:0.88rem; color:var(--muted2); margin-bottom:2rem; line-height:1.6; }
-  .field { display:flex; flex-direction:column; gap:0.4rem; margin-bottom:1rem; }
-  label { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; }
-  input { background:var(--bg3); border:1px solid var(--border2); color:var(--text); padding:0.75rem 1rem; font-family:var(--sans); font-size:0.9rem; outline:none; width:100%; transition:border-color 0.15s; }
+  h1 { font-family:var(--display); font-weight:700; font-size:1.3rem; letter-spacing:-0.03em; margin-bottom:0.35rem; }
+  .subtitle { font-size:0.8rem; color:var(--muted2); margin-bottom:1.5rem; line-height:1.55; }
+  .field { display:flex; flex-direction:column; gap:0.35rem; margin-bottom:0.8rem; }
+  label { font-family:var(--mono); font-size:0.56rem; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; }
+  input { background:var(--bg3); border:1px solid var(--border2); color:var(--text); padding:0.6rem 0.8rem; font-family:var(--sans); font-size:0.82rem; outline:none; width:100%; transition:border-color 0.15s; }
   input:focus { border-color:var(--orange); }
-  .btn { width:100%; margin-top:0.5rem; background:var(--orange); color:#000; font-family:var(--sans); font-weight:700; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; border:none; padding:0.9rem; cursor:pointer; transition:opacity 0.15s; }
+  .btn { width:100%; margin-top:0.4rem; background:var(--orange); color:#000; font-family:var(--sans); font-weight:700; font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase; border:none; padding:0.7rem; cursor:pointer; transition:opacity 0.15s; }
   .btn:disabled { opacity:0.5; cursor:not-allowed; }
-  .msg { font-family:var(--mono); font-size:0.72rem; margin-top:0.8rem; padding:0.6rem 0.8rem; border-radius:0; }
+  .msg { font-family:var(--mono); font-size:0.65rem; margin-top:0.6rem; padding:0.5rem 0.65rem; border-radius:0; }
   .msg.err { color:#ff5555; border:1px solid #ff555430; background:#ff55550a; }
   .msg.ok { color:#6abf69; border:1px solid #6abf6930; background:#6abf690a; }
-  .helper { font-family:var(--mono); font-size:0.62rem; color:var(--muted); text-align:center; line-height:1.7; max-width:420px; }
+  .helper { font-family:var(--mono); font-size:0.56rem; color:var(--muted); text-align:center; line-height:1.65; max-width:380px; }
   .signup-link { color:var(--orange); text-decoration:none; }
   .signup-link:hover { text-decoration:underline; }
 `;

@@ -14,18 +14,18 @@ export default function Topbar({ name }: { name: string }) {
 
   return (
     <div style={{
-      height: 52,
+      height: 42,
       background: "#0d0d0d",
       borderBottom: "1px solid #1e1e1e",
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      padding: "0 2rem",
+      padding: "0 1.5rem",
       flexShrink: 0,
     }}>
       <span style={{
         fontFamily: "'Space Mono', monospace",
-        fontSize: "0.72rem",
+        fontSize: "0.65rem",
         color: "#5a5a5a",
         letterSpacing: "0.08em",
       }}>
@@ -38,9 +38,9 @@ export default function Topbar({ name }: { name: string }) {
           border: "1px solid #282828",
           color: "#5a5a5a",
           fontFamily: "'Space Mono', monospace",
-          fontSize: "0.62rem",
+          fontSize: "0.56rem",
           letterSpacing: "0.1em",
-          padding: "0.35rem 0.8rem",
+          padding: "0.28rem 0.65rem",
           cursor: "pointer",
           textTransform: "uppercase",
           transition: "color 0.15s, border-color 0.15s",
